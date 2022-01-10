@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PasswordTextFieldPractice</string>
+    <string name="warning_password_level_strong">strong</string>
+    <string name="warning_password_level_weak">weak</string>
+</resources>
