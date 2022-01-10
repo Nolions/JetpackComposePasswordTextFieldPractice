@@ -62,6 +62,7 @@ fun PasswordTextField(
     labelText: String = "",
     description: String = "",
     onTextChanged: (text: String) -> Unit = {},
+    isError: Boolean = false
 ) {
     val focusManager = LocalFocusManager.current
     val showPassword = remember { mutableStateOf(false) }
@@ -69,7 +70,7 @@ fun PasswordTextField(
     Column(modifier = Modifier.fillMaxWidth()) {
         OutlinedTextField(
             modifier = Modifier
-                .background(color = colorResource(id = R.color.design_default_color_primary))
+//                .background(color = colorResource(id = R.color.design_default_color_primary))
                 .fillMaxWidth()
                 .semantics { contentDescription = description },
             value = text,
@@ -77,7 +78,7 @@ fun PasswordTextField(
             placeholder = {
                 Text(
                     text = labelText,
-                    color = Color.White,
+                    color = Color.Black,
                     fontSize = 16.sp,
                 )
             },
@@ -103,11 +104,12 @@ fun PasswordTextField(
                     )
                 }
             },
+            isError = isError,
             colors = TextFieldDefaults.outlinedTextFieldColors(
-                focusedBorderColor = Color.White,
-                unfocusedBorderColor = Color.White,
-                textColor = Color.White,
-                cursorColor = Color.White,
+                focusedBorderColor = Color.Black,
+                unfocusedBorderColor = Color.Black,
+                textColor = Color.Black,
+                cursorColor = Color.Black,
             )
         )
 
@@ -126,10 +128,10 @@ private fun setIconColor(isVisual: Boolean): Pair<ImageVector, Color> {
     return if (isVisual) {
         Pair(
             Icons.Filled.Visibility,
-            colorResource(id = R.color.white)
+            colorResource(id = R.color.black)
         )
     } else {
-        Pair(Icons.Filled.VisibilityOff, colorResource(id = R.color.white))
+        Pair(Icons.Filled.VisibilityOff, colorResource(id = R.color.black))
     }
 }
 
@@ -157,7 +159,8 @@ fun DefaultPreview() {
             description = "description",
             onTextChanged = {
                 text.value = it
-            }
+            },
+            isError = true
         )
     }
 }

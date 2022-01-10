@@ -16,3 +16,4 @@ Jetpack Compose練習Password Input Field
 | visualTransformation | VisualTransformation | 設定改變了輸入欄位的視覺效果 |
 | trailingIcon | @Composable lambda | 輸入欄位後面中Icon |
 | colors | TextFieldColors | 輸入欄位中相關顏色設置 |
+| isError | Boolean | 是否為錯誤狀態 |
